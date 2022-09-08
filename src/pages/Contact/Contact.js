@@ -1,12 +1,18 @@
-import React, { useMemo, useState } from "react";
+import React, { useLayoutEffect, useMemo, useState } from "react";
 
 const Contact = () => {
   const [count, setCount] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [countt, setCountt] = useState(0);
 
   const increment = () => {
     setCount(count + 1);
   };
+
+  //is not synchronously runs the dom and its layout
+  useLayoutEffect(() => {
+    console.log(counter);
+  }, [counter]);
 
   const incrementt = () => {
     setCountt(countt + 1);
@@ -37,6 +43,10 @@ const Contact = () => {
           </button>
           <p>
             Number is : <span>{countt}</span>
+          </p>
+
+          <p>
+            Number counter uselayouteffect isis : <span>{counter}</span>
           </p>
         </div>
       </div>
