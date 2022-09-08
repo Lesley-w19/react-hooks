@@ -1,27 +1,30 @@
 import React from "react";
-import {
-  useLocation,
-  useNavigate,
-
-} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 const Footer = () => {
   let navigate = useNavigate();
   //   console.log(navigate);
 
   const gotoContact = () => {
-    navigate("/contact");
+    navigate("/contact", {
+      replace: true,
+    });
   };
 
+  const goBack = () => {
+    navigate(-1);
+  };
   let location = useLocation();
-//   console.log(location);
+  //   console.log(location);
 
   return (
     <>
-      <button className="btn btn-success">Go back</button>
-      <button className="btn btn-primary">Go forward</button>
-      <button className="btn btn-warning">Replace</button>
+      <button className="btn btn-success" onClick={goBack}>
+        Go Back
+      </button>
+      {/* <button className="btn btn-primary">Go forward</button>
+      <button className="btn btn-warning">Replace</button> */}
       <div>{location.pathname}</div>
-      <button className="btn btn-info">Push</button>
+      {/* <button className="btn btn-info">Push</button> */}
       <button className="btn btn-dark" onClick={gotoContact}>
         Go to contact
       </button>
