@@ -1,0 +1,13 @@
+.about__wrapper {
+  padding: 10px 20px;
+  width: 70%;
+}
+.about__info__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.about__info__body {
+  width: 90%;
+}
