@@ -1,0 +1,36 @@
+.btn {
+  padding: 4px 10px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  color: aliceblue;
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: #0d6efd;
+}
+.btn-secondary {
+  background-color: #6c757d;
+}
+.btn-success {
+  background-color: #198754;
+}
+.btn-info {
+  background-color: #0dcaf0;
+}
+.btn-warning {
+  background-color: #ffc107;
+}
+.btn-danger {
+  background-color: #dc3545;
+}
+.btn-light {
+  background-color: #f8f9fa;
+  color: black;
+}
+.btn-dark {
+  background-color: #212529;
+}
+
+/*# sourceMappingURL=styles.css.map */
