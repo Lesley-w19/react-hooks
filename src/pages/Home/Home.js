@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useReducer } from "react";
+import React, {
+  useEffect,
+  useState,
+  useReducer,
+  useDeferredValue,
+} from "react";
 import Footer from "../../components/Footer";
 import axios from "axios";
 
@@ -20,6 +25,10 @@ const Home = () => {
         console.log(err);
       });
   }, []);
+
+  const defferedValue = useDeferredValue(tasks, {
+    timeoutMs: 3000,
+  });
 
   const reducer = (state, action) => {
     switch (action.type) {
@@ -61,7 +70,7 @@ const Home = () => {
         <h1>Home page</h1>
       </div>
       {loading ? (
-        <h1>Loading...</h1>
+        <div>{defferedValue ? <h1>Loading...</h1> : ""}</div>
       ) : (
         tasks?.map((task) => (
           <div key={task.id}>
