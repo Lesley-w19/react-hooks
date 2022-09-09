@@ -11,19 +11,24 @@ const Home = () => {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
+  const getTodos = async () => {
     setLoading(true);
-    axios
+    await axios
       .get("https://dummyjson.com/todos")
       .then((response) => {
-        // console.log(response.data.todos);
-        const td = response.data.todos.slice(0, 5);
-        setTasks(td);
-        setLoading(false);
+        console.log(response);
+        if (response.status === 200) {
+          const td = response.data.todos.slice(0, 5);
+          setTasks(td);
+          setLoading(false);
+        }
       })
       .catch((err) => {
         console.log(err);
       });
+  };
+  useEffect(() => {
+    getTodos();
   }, []);
 
   const defferedValue = useDeferredValue(tasks, {
@@ -62,7 +67,7 @@ const Home = () => {
   ];
 
   const [state, dispatch] = useReducer(reducer, { todos: initialTodos });
-  console.log(state.todos);
+  // console.log(state.todos);
   const handleComplete = (todo) => {
     dispatch({ type: "COMPLETE", id: todo.id });
   };
