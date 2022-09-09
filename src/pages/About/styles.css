@@ -11,3 +11,13 @@
 .about__info__body {
   width: 90%;
 }
+.reducer__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+input {
+  padding: 10px 20px;
+  width: 200px;
+}
