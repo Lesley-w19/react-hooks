@@ -33,13 +33,15 @@ const Home = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "COMPLETE":
-        return state.map((todo) => {
-          if (todo.id === action.id) {
-            return { ...todo, complete: !todo.complete };
-          } else {
-            return todo;
-          }
-        });
+        return {
+          todos: state.todos.map((todo) => {
+            if (todo.id === action.id) {
+              return { ...todo, complete: !todo.complete };
+            } else {
+              return todo;
+            }
+          }),
+        };
       default:
         return state;
     }
@@ -59,8 +61,8 @@ const Home = () => {
     },
   ];
 
-  const [todos, dispatch] = useReducer(reducer, initialTodos);
-  // console.log(todos);
+  const [state, dispatch] = useReducer(reducer, { todos: initialTodos });
+  console.log(state.todos);
   const handleComplete = (todo) => {
     dispatch({ type: "COMPLETE", id: todo.id });
   };
@@ -87,7 +89,7 @@ const Home = () => {
       )}
 
       <h4>TODOS....</h4>
-      {todos.map((todo) => (
+      {state.todos.map((todo) => (
         <div key={todo.id}>
           <label>
             <input
