@@ -1,0 +1,26 @@
+@import "./colors.scss";
+
+nav {
+  padding: 10px;
+  background-color: $dark;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    list-style: none;
+    li {
+      margin: 10px 20px;
+
+      a {
+        letter-spacing: 1px;
+        color: $light;
+        text-decoration: none;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
