@@ -1,1 +1,11 @@
-@import "./button.scss"
+* {
+  .wrapper {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: rgba(235, 214, 189, 0.339);
+  }
+}
+
+@import "./button.scss";
+@import "./navbar.scss";
