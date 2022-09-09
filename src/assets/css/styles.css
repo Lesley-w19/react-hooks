@@ -1,3 +1,10 @@
+* .wrapper {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: rgba(235, 214, 189, 0.339);
+}
+
 .btn {
   padding: 4px 10px;
   margin: 10px auto;
@@ -31,6 +38,29 @@
 }
 .btn-dark {
   background-color: #212529;
+}
+
+nav {
+  padding: 10px;
+  background-color: #212529;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+}
+nav ul li {
+  margin: 10px 20px;
+}
+nav ul li a {
+  letter-spacing: 1px;
+  color: #f8f9fa;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+}
+nav ul li a:hover {
+  color: #0d6efd;
 }
 
 /*# sourceMappingURL=styles.css.map */
