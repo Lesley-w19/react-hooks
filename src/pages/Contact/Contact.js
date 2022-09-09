@@ -9,8 +9,11 @@ const Contact = () => {
     setCount(count + 1);
   };
 
-  //is not synchronously runs the dom and its layout
+  //it synchronously runs the dom and its layout
   useLayoutEffect(() => {
+    // setInterval(() => {
+    //   setCounter(counter + 1);
+    // }, 1000);
     console.log(counter);
   }, [counter]);
 
@@ -27,7 +30,7 @@ const Contact = () => {
 
   return (
     <>
-      <div>
+      <div className="c_wrapper">
         <h1>contact page</h1>
         <div>
           <button className="btn btn-warning" onClick={increment}>
@@ -45,9 +48,9 @@ const Contact = () => {
             Number is : <span>{countt}</span>
           </p>
 
-          <p>
-            Number counter uselayouteffect isis : <span>{counter}</span>
-          </p>
+          <button className="btn btn-info">
+            Number counter uselayouteffect is : <span>{counter}</span>
+          </button>
         </div>
       </div>
     </>
